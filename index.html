@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divina Batata - Cardápio Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="https://wa.me/5551981031317" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<header>
+    <div class="logo-container">
+        <img src="./img/logo.jpg" alt="Logo" onerror="this.src='https://via.placeholder.com/150?text=LOGO';">
+    </div>
+    <div class="logo-text">Divina Batata</div>
+    <div class="info" style="position:relative; z-index:2;">
+        <p>Rua Barão do Ubá, 239</p>
+        <span class="status">🟢 Aberto: Domingo a Domingo</span>
+    </div>
+</header>
+
+<nav class="nav-menu">
+    <a href="#destaques" class="nav-item">⭐️ Destaques</a>
+    <a href="#batatoes" class="nav-item">🍟 Batatões</a>
+    <a href="#xis" class="nav-item">🍔 Xis & Burger</a>
+    <a href="#alaminuta" class="nav-item">🍽️ Alaminuta</a>
+</nav>
+
+<section id="destaques">
+    <div class="category-title" style="margin-left: 20px;">Principais da Casa</div>
+    <div class="highlights-container">
+        <div class="highlight-card" onclick="addToCart('Xis Tudo', 35)">
+            <div class="highlight-img-frame">
+                <img src="./img/xistudo.jpg" alt="Xis Tudo" style="object-fit: contain;" onerror="this.src='https://via.placeholder.com/100?text=XIS';">
+            </div>
+            <h4>Xis Tudo</h4><p class="h-price">R$ 35,00</p>
+        </div>
+        <div class="highlight-card" onclick="addToCart('Batatão G', 100)">
+            <div class="highlight-img-frame">
+                <img src="./img/batataoG.jpg" alt="Batatão G" style="object-fit: contain;" onerror="this.src='https://via.placeholder.com/100?text=BATATA';">
+            </div>
+            <h4>Batatão G</h4><p class="h-price">R$ 100,00</p>
+        </div>
+        <div class="highlight-card" onclick="addToCart('Xis Coração', 32)">
+            <div class="highlight-img-frame">
+                <img src="./img/xiscoracao.jpg" alt="Xis Coração" style="object-fit: contain;" onerror="this.src='https://via.placeholder.com/100?text=XIS';">
+            </div>
+            <h4>Xis Coração</h4><p class="h-price">R$ 32,00</p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section id="batatoes">
+        <div class="category-title">Os Famosos Batatões</div>
+        <div class="product-card">
+            <div class="product-info"><h3>Batatão Grande</h3><span class="price">R$ 100,00</span></div>
+            <button class="add-btn" onclick="addToCart('Batatão G', 100)">+</button>
+        </div>
+        <div class="product-card">
+            <div class="product-info"><h3>Batatão Médio</h3><span class="price">R$ 70,00</span></div>
+            <button class="add-btn" onclick="addToCart('Batatão M', 70)">+</button>
+        </div>
+        <div class="product-card">
+            <div class="product-info"><h3>Batatão Pequeno</h3><span class="price">R$ 50,00</span></div>
+            <button class="add-btn" onclick="addToCart('Batatão P', 50)">+</button>
+        </div>
+    </section>
+
+    <section id="xis">
+        <div class="category-title">Xis & Hambúrgueres</div>
+        <div id="xis-list"></div>
+    </section>
+
+    <section id="alaminuta">
+        <div class="category-title">Alaminuta</div>
+        <div class="product-card">
+            <div class="product-info"><h3>Alaminuta Grande</h3><span class="price">R$ 30,00</span></div>
+            <button class="add-btn" onclick="addToCart('Alaminuta Grande', 30)">+</button>
+        </div>
+        <div class="product-card">
+            <div class="product-info"><h3>Alaminuta Média</h3><span class="price">R$ 25,00</span></div>
+            <button class="add-btn" onclick="addToCart('Alaminuta Média', 25)">+</button>
+        </div>
+    </section>
+
+    <footer class="footer-info">
+        <h2>DIVINA BATATA</h2>
+        <p>"Mais que uma refeição, uma experiência divina..."</p>
+        <div class="booking-card">
+            <h3>Agendamentos & Eventos</h3>
+            <p>Planeje seu evento conosco!</p>
+            <a href="https://wa.me/5551981031317?text=Olá! Gostaria de agendar um pedido ou evento." target="_blank" class="booking-btn">AGENDAR NO WHATSAPP</a>
+        </div>
+    </footer>
+</div>
+
+<div class="cart-bar" id="cartBar">
+    <div class="cart-info">
+        <button class="delete-cart" onclick="clearCart()"><i class="fas fa-trash-alt"></i></button>
+        <div><p id="total-label">Total</p><p><strong id="cartTotal">R$ 0,00</strong></p></div>
+    </div>
+    <a href="#" class="checkout-btn" onclick="sendWhatsApp()">Finalizar Pedido</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
